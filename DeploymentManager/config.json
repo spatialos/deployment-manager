@@ -1,0 +1,11 @@
+{
+  "TokenLifetimeDays": 7,
+  "ClientType": "YourClient",
+  "MaxNumberOfClients": 100,
+  "DeploymentPrefix": "session",
+  "NumberOfDeployments": 1,
+  "AssemblyName": "YourAssembly",
+  "DeploymentTags": [ "dev_login", "ttl_1_hours" ],
+  "RegionCode": "EU",
+  "DeploymentIntervalSeconds": 5
+}

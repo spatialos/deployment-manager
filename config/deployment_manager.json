@@ -1,0 +1,76 @@
+{
+    "workerType": "DeploymentManager",
+    "layer": "DeploymentManager",
+    "entityInterest": {
+      "range_entity_interest": {
+        "radius": 2
+      }
+    },
+    "permissions": {
+        "all": {}
+    },
+    "componentDelivery": {
+      "default": "RELIABLE_ORDERED",
+      "checkout_all_initially": true
+    },
+    "launchConfiguration": {
+      "cloudDeployment": {
+        "linux": {
+          "localBuildDirectory": "..//DeploymentManager/bin/x64/Release/netcoreapp2.1/linux-x64/publish",
+          "command": "DeploymentManager",
+          "arguments": [
+            "--receptionist-host",
+            "${IMPROBABLE_RECEPTIONIST_HOST}",
+            "--receptionist-port",
+            "${IMPROBABLE_RECEPTIONIST_PORT}",
+            "--worker-id",
+            "${IMPROBABLE_WORKER_ID}",
+            "--log-file",
+            "${IMPROBABLE_LOG_FILE}",
+            "--project-name",
+            "${IMPROBABLE_PROJECT_NAME}",
+            "--assembly-name",
+            "${IMPROBABLE_ASSEMBLY_NAME}"
+          ]
+        }
+      },
+      "localDeployment": {
+        "windows": {
+          "localBuildDirectory": "../DeploymentManager/bin/x64/Release/netcoreapp2.1/win10-x64/publish",
+          "command": "DeploymentManager.exe",
+          "arguments": [
+            "--receptionist-host",
+            "${IMPROBABLE_RECEPTIONIST_HOST}",
+            "--receptionist-port",
+            "${IMPROBABLE_RECEPTIONIST_PORT}",
+            "--worker-id",
+            "${IMPROBABLE_WORKER_ID}",
+            "--log-file",
+            "${IMPROBABLE_LOG_FILE}",
+            "--project-name",
+            "${IMPROBABLE_PROJECT_NAME}",
+            "--assembly-name",
+            "${IMPROBABLE_ASSEMBLY_NAME}"
+          ]
+        },
+        "macos": {
+          "localBuildDirectory": "../DeploymentManager/bin/x64/Release/netcoreapp2.1/osx-x64",
+          "command": "DeploymentManager",
+          "arguments": [
+            "--receptionist-host",
+            "${IMPROBABLE_RECEPTIONIST_HOST}",
+            "--receptionist-port",
+            "${IMPROBABLE_RECEPTIONIST_PORT}",
+            "--worker-id",
+            "${IMPROBABLE_WORKER_ID}",
+            "--log-file",
+            "${IMPROBABLE_LOG_FILE}",
+            "--project-name",
+            "${IMPROBABLE_PROJECT_NAME}",
+            "--assembly-name",
+            "${IMPROBABLE_ASSEMBLY_NAME}"
+          ]
+        }
+      }
+    }
+  }

@@ -1,0 +1,17 @@
+package improbable.session;
+
+enum Status {
+    LOBBY = 1;
+    RUNNING = 2;
+    STOPPING = 3;
+    STOPPED = 4;
+} 
+
+component Session {
+    id = 1000;
+    Status status = 1;
+}
+
+component Deployment {
+    id = 1001;
+}

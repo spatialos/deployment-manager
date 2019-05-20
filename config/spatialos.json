@@ -1,0 +1,10 @@
+{
+    "configurationVersion": "0.1",
+    "projectName": "YourProject",
+    "schemaDescriptor": "../tmp/schema.descriptor",
+    "clientWorkers": [
+    ],
+    "serverWorkers": [
+      "deployment_manager.json"
+    ]
+  }

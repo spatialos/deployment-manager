@@ -26,7 +26,7 @@ namespace DeploymentManager
                     ProjectName = projectName,
                 };
 
-                return PlayerAuthServiceClient.CreateDevelopmentAuthenticationToken(request).DevelopmentAuthenticationToken.Id;
+                return PlayerAuthServiceClient.CreateDevelopmentAuthenticationToken(request).TokenSecret;
             });
         }
     }

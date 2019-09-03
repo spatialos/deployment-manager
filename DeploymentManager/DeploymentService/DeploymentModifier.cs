@@ -124,6 +124,24 @@ namespace DeploymentManager
             });
         }
 
+        public static void AddDeploymentTags(GetDeploymentRequest request, IEnumerable<string> tags)
+        {
+            ExceptionHandler.HandleGrpcCall(() =>
+            {
+                var deployment = GetDeployment(request);
+
+                foreach (var tag in tags)
+                {
+                    if (!deployment.Tag.Contains(tag))
+                    {
+                        deployment.Tag.Add(tag);
+                    }
+                }
+                
+                UpdateDeployment(deployment);
+            });
+        }
+
         public static void AddDeploymentTag(GetDeploymentRequest request, string tag)
         {
             ExceptionHandler.HandleGrpcCall(() =>

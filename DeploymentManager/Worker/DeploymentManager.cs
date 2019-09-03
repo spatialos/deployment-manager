@@ -168,13 +168,8 @@ namespace DeploymentManager
         private void ConnectToDeployment(Deployment deployment)
         {
             var request = DeploymentModifier.GetGetDeploymentRequest(deployment.Id, workerConfig.ProjectName);
-            foreach (var deploymentTag in sessionConfig.DeploymentTags)
-            {
-                DeploymentModifier.AddDeploymentTag(request, deploymentTag);
-            }
-            
+            DeploymentModifier.AddDeploymentTags(request, sessionConfig.DeploymentTags.Append($"{Tags.MaxPlayers}_{sessionConfig.MaxNumberOfClients}"));
             DeploymentModifier.SetMaxWorkerCapacity(request, sessionConfig.ClientType, sessionConfig.MaxNumberOfClients);
-            DeploymentModifier.AddDeploymentTag(request, $"{Tags.MaxPlayers}_{sessionConfig.MaxNumberOfClients}");
 
             var connector = new Connector(WorkerType, deployment.Name, serviceConnection);
             var connectionParameters = new ConnectionParameters

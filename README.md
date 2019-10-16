@@ -1,4 +1,6 @@
-# SpatialOS Deployment Manager
+# [Deprecated] SpatialOS Deployment Manager
+
+> This repository is deprecated. To manage a SpatialOS game with multiple deployments, please use the [deployment pool module](https://docs.improbable.io/metagame/latest/content/configuration-examples/deployment-pool/overview) of the SpatialOS Online Services
 
 The SpatialOS Deployment Manager is a [SpatialOS](https://docs.improbable.io/reference/latest/index) game management tool. It starts and stops [game deployments](https://docs.improbable.io/reference/latest/shared/glossary#deploying) - instances of your game running in SpatialOS. It’s useful for player-limited and time-limited match-based games such as battle royales where you have multiple game sessions, with a defined number of players.
 
